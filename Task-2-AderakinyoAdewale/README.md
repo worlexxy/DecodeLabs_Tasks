@@ -1,3 +1,6 @@
+<img width="1552" height="1250" alt="Image 13-06-2026 at 13 42" src="https://github.com/user-attachments/assets/6e15ead7-14e4-48f2-a356-9ef744188fd7" />
+
+
 **Introduction**
 
 This project focuses on analysing an e‑commerce transactional dataset containing over 200 customer orders. The dataset includes key operational fields such as Order ID, Product, Quantity, Unit Price, Payment Method, Order Status, Coupon Code, Referral Source, and Total Price.
