@@ -7,13 +7,13 @@ This folder contains the SQL scripts used to load, clean, and analyze the transa
 ## Database Setup & Table Creation
 Table Creation: Created a structured database table named sales_data with 14 target columns.
 To begin the analysis, the raw dataset was loaded into a PostgreSQL database using the following schema. 
-Import Strategy: To bypass structural trailing-comma limitations from the source CSV file, an extra placeholder column (Extra_Comma) was implemented to cleanly catch data rows without throwing import errors.
+Import Strategy: To bypass structural trailing comma limitations from the source CSV file, an extra placeholder column (Extra_Comma) was implemented to cleanly catch data rows without throwing import errors.
 Once the 1,200 total dataset rows were successfully loaded into the database, the temporary column was permanently deleted using the ALTER TABLE sales_data DROP COLUMN Extra_Comma query.
 
 ### SQL Query
 ```sql
 -- Creating the initial sales data table
-CREATE TABLE sales_data (
+CREATE TABLE e-commerce (
     OrderID VARCHAR(50),
     Date DATE,
     CustomerID VARCHAR(50),
@@ -32,7 +32,7 @@ CREATE TABLE sales_data (
 );
 
 -- Drop the extra column that caused loading errors during import
-ALTER TABLE sales_data 
+ALTER TABLE e-commerce 
 DROP COLUMN Extra_Comma;
 
 -- Verify the cleaned table structure
