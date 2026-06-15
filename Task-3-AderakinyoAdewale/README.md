@@ -1,17 +1,15 @@
-# Task 3: SQL Data Analysis
+Task 3: SQL Data Analysis
 
-# Project Goal
-The goal of this project is to use PostgreSQL and pgAdmin to manage a sales_data, write structured SQL queries to filter through records, and extract critical business performance metrics.
-This folder contains the SQL scripts used to load, clean, and analyze the transaction dataset. The analysis focuses on extracting key performance indicators (KPIs) such as total revenue, order statuses, product performance, and average transaction values. All queries reference the script file Task 3 SQL.sql`.
+Project Goal
 
-## Database Setup & Table Creation
-Table Creation: Created a structured database table named sales_data with 14 target columns.
-To begin the analysis, the raw dataset was loaded into a PostgreSQL database using the following schema. 
-Import Strategy: To bypass structural trailing-comma limitations from the source CSV file, an extra placeholder column (Extra_Comma) was implemented to cleanly catch data rows without throwing import errors.
-Once the 1,200 total dataset rows were successfully loaded into the database, the temporary column was permanently deleted using the ALTER TABLE sales_data DROP COLUMN Extra_Comma query.
+The goal of this project is to use PostgreSQL and pgAdmin to manage a sales_data, write structured SQL queries to filter through records, and extract critical business performance metrics. This folder contains the SQL scripts used to load, clean, and analyze the transaction dataset. The analysis focuses on extracting key performance indicators (KPIs) such as total revenue, order statuses, product performance, and average transaction values. All queries reference the script file Task 3 SQL.sql`.
 
-### SQL Query
-```sql
+Database Setup & Table Creation
+
+Table Creation: Created a structured database table named sales_data with 14 target columns. To begin the analysis, the raw dataset was loaded into a PostgreSQL database using the following schema. Import Strategy: To bypass structural trailing-comma limitations from the source CSV file, an extra placeholder column (Extra_Comma) was implemented to cleanly catch data rows without throwing import errors. Once the 1,200 total dataset rows were successfully loaded into the database, the temporary column was permanently deleted using the ALTER TABLE sales_data DROP COLUMN Extra_Comma query.
+
+SQL Query
+
 -- Creating the initial sales data table
 CREATE TABLE sales_data (
     OrderID VARCHAR(50),
