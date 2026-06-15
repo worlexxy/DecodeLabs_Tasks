@@ -12,7 +12,7 @@ Once the 1,200 total dataset rows were successfully loaded into the database, th
 
 ### SQL Query
 ```sql
--- Creating the initial sales data table
+-- Creating the initial e-commerce table
 CREATE TABLE e-commerce (
     OrderID VARCHAR(50),
     Date DATE,
@@ -36,7 +36,7 @@ ALTER TABLE e-commerce
 DROP COLUMN Extra_Comma;
 
 -- Verify the cleaned table structure
-SELECT * FROM sales_data;
+SELECT * FROM e-commerce_data;
 
 ## SQL Queries and Key Insights
 Key Business Metrics
@@ -84,7 +84,7 @@ SELECT
     UnitPrice, 
     TotalPrice, 
     OrderStatus
-FROM sales_data
+FROM e-commerce_data
 WHERE OrderStatus = 'Shipped';
 
 
@@ -117,7 +117,7 @@ SELECT
     Product,
     COUNT(OrderID) AS Items_Sold,
     SUM(REPLACE(REPLACE(TotalPrice, '$', ''), ',', '')::NUMERIC) AS Category_Revenue
-FROM sales_data
+FROM e-commerce_data
 GROUP BY Product
 ORDER BY Category_Revenue DESC
 LIMIT 5;
@@ -135,7 +135,7 @@ LIMIT 5;
 
 # Core Insights:
 
-Top Revenue Generator: Chair is the single highest-grossing product category, generating a total revenue of $195,620.11 across 178 individual orders.
+Top Revenue Generator: Chair is the single highest grossing product category, generating a total revenue of $195,620.11 across 178 individual orders.
 
 Top Volume Performer: Printer generated the absolute highest volume of distribution with 181 items sold, finishing a close second in total revenue generation at $195,612.61.
 
